@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './register-web.css';
 import logo from "../../assets/images/marcopolo_logo.png";
 
 function RegistrationForm() {
+  const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -10,10 +12,8 @@ function RegistrationForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Usuário:", username);
-    console.log("E-mail:", email);
-    console.log("Senha:", password);
-    console.log("Confirmar senha:", confirmPassword);
+
+    navigate('/success');
   };
 
   return (
